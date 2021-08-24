@@ -1,7 +1,7 @@
 \documentclass[10pt,a4paper]{mycv}
 \moderncvstyle{mb}
 \moderncvcolor{radish}
-\usepackage[hscale=0.65, vscale=0.7]{geometry}
+\usepackage[hscale=0.65, vscale=0.75]{geometry}
 \usepackage{lastpage}
 
 \addbibresource{../bibliography.bib}
@@ -20,15 +20,14 @@
 \cfoot{\sansc \thepage}
 \makecvtitle
 
-
 \section{Education}
 \input{../sections/education.tex}
 
-\section{Interests}
-\input{../sections/work_interests.tex}
-
 \section{Work Experience}
 \input{../sections/work_experience.tex}
+
+\section{Research Experience}
+\input{../sections/research_experience.tex}
 
 \section{Skills}
 \input{../sections/skills.tex}
@@ -36,8 +35,16 @@
 \section{Apps}
 \input{../sections/apps.tex}
 
-\section{Research Experience}
-\input{../sections/research_experience.tex}
+\begingroup
+\setlength\bibitemsep{2ex}
+\printbibliography[title=Papers, nottype=unpublished]
+\endgroup
+
+\begingroup
+\setlength\bibitemsep{2ex}
+\printbibliography[title=Talks, type=unpublished]
+\endgroup
+
 
 \section{Awards}
 \input{../sections/awards.tex}
