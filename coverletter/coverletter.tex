@@ -1,12 +1,22 @@
-\documentclass{letter}
-\signature{Your name}
-\address{Street \\ City \\ Country}
+\documentclass[myletter, a4paper, 11pt]{scrlttr2}
+\pagestyle{headings}
+
 \begin{document}
-\begin{letter}{Company name \\ Street\\ City\\ Country}
-\opening{Dear Sir or Madam:}
-\dots
-\closing{Yours Faithfully,}
-\ps{P.S. Here goes your ps.}
-\encl{Enclosures.}
+
+\begin{letter}{\today \\Danny DeVito \\2500 Mulholland Drive \\Los Angeles CA 102345}
+\setkomavar{subject}{Subject line}
+
+\opening{To whomever this may concern,}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\setkomavar{fromname}{Venkat}
+\closing{Yours}
+
+\encl{Resume/Curriculum Vitaé}
+
 \end{letter}
+
 \end{document}

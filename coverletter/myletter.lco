@@ -1,0 +1,100 @@
+\ProvidesFile{myletter.lco}[%
+  2021/08/24 letter class option]
+\@setplength{toaddrhpos}{27mm}
+\@setplength{toaddrwidth}{92mm}
+\@setplength{sigindent}{0mm}
+\setlength{\parindent}{0mm}
+
+
+\renewcommand*{\raggedsignature}{\raggedright}
+
+\KOMAoptions{%
+  fromrule=false
+}
+
+\RequirePackage{xcolor}
+\definecolor{color1}{RGB}{215,58,73}% github red background color for headings
+\definecolor{color2}{HTML}{0366D6} % Github Blue
+
+% Define some new variable
+\newkomavar[Company]{company}
+\newkomavar[Department]{department}
+\newkomavar[University]{uni}
+\newkomavar[Sender]{sender}
+\newkomavar[Mailing Address]{postal}
+
+
+% Set some variable, which are always the same
+\setkomavar{company}{}
+\setkomavar{department}{Department of Linguistics}
+\setkomavar{uni}{The University of Texas at Austin}
+\setkomavar{postal}{%\\
+  Apt 242\\
+  600 E 53rd Street\\
+  Austin TX 78751
+}
+\setkomavar{backaddressseparator}{~\textbar~}
+\setlength{\textwidth}{10cm}
+
+\date{}
+
+% Start personal modification here
+\setkomavar{sender}{Venkata S Govindarajan}
+\setkomavar{fromemail}{venkat@venkatasg.net}
+\setkomavar{fromphone}{+1(512)-568-8775}
+\setkomavar{fromaddress}{}
+\setkomavar{myref}{}
+
+
+%-------------------------------------------------------------------------------
+%                fonts & icons
+%-------------------------------------------------------------------------------
+% Fonts
+\RequirePackage{unicode-math}
+\setmainfont{Equity A}
+\setsansfont{Concourse 3}
+\newfontfamily{\sansc}{Concourse 3 Caps}[Letters=UppercaseSmallCaps]
+\newfontfamily{\rmsc}{Equity A Caps}[Letters=UppercaseSmallCaps]
+\newfontfamily{\sancs}{Concourse 3 Caps}
+\newfontfamily{\rmcs}{Equity A Caps}
+\newfontfamily{\nfwc}{Concourse T3 Index}
+\newfontfamily{\nfws}{Concourse T3 Index}[StylisticSet = 1]
+\newfontfamily{\nfbc}{Concourse T3 Index}[StylisticSet = 2]
+\newfontfamily{\nfbs}{Concourse T3 Index}[StylisticSet = 3]
+\setmonofont{Triplicate A Code}[Scale=MatchLowercase]
+\setmathfont{Asana Math}[Scale=MatchLowercase]
+\linespread{1.2}
+
+
+% Define new letter header
+\firsthead{
+
+%  \vspace*{3cm}
+  \null\hfill
+  \parbox[t][\headheight][t]{4cm}{%
+    \raggedright
+    \color{color1!70}%
+    {\sansc%
+      \small
+
+%      \vspace*{1.5cm}
+      \textbf{\usekomavar{sender}}
+      
+      \vspace*{1.5cm}
+      \usekomavar{department}\\
+%      \vspace*{0.2cm}
+      \usekomavar{uni}\\
+%     \vspace*{0.2cm}
+     \usekomavar{fromemail}\\
+
+      
+
+      \vspace*{1cm}
+      \textbf{\usekomavar*{postal}}:\\
+      \usekomavar{postal}
+
+      \usekomavar{fromphone}\\
+
+      }\vspace*{0.5cm}
+    }%
+  }%
