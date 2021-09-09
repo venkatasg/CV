@@ -1,18 +1,19 @@
 \documentclass[11pt,a4paper]{mycv}
 \moderncvstyle{mb}
 \moderncvcolor{radish}
-\usepackage[hscale=0.65, vscale=0.71]{geometry}
+\usepackage[hscale=0.70, vscale=0.75]{geometry}
 
 \addbibresource{bibliography.bib}
 \nocite{*}
 
 % personal data
 \name{Venkata\space S}{Govindarajan}
-%\title{he/him}
+\title{He/Him\\Department of Linguistics,\\The University of Texas at Austin}
 \email{venkat@venkatasg.net}
 \social[github]{venkatasg}
+%\phone{+1 (512) 568 8775}
 \homepage{venkatasg.net}
-\address{University of Texas at Austin}{Department of Linguistics}{He/Him}
+%\address{The University of Texas at Austin}{Department of Linguistics}{He/Him}
 
 \begin{document}
 
@@ -30,20 +31,25 @@
 \input{sections/work_experience.tex}
 
 \begingroup
-\setlength\bibitemsep{2ex}
+\setlength\bibitemsep{0.5ex}
 \printbibliography[title=Papers, nottype=unpublished]
 \endgroup
 
 \begingroup
-\setlength\bibitemsep{2ex}
+\setlength\bibitemsep{0.5ex}
 \printbibliography[title=Talks, type=unpublished]
 \endgroup
+
+\section{Research Experience}
+\input{sections/research_experience.tex}
 
 \section{Teaching}
 \input{sections/teaching.tex}
 
 \section{Skills}
 \input{sections/skills.tex}
+
+\newpage
 
 \section{Apps}
 \input{sections/apps.tex}
