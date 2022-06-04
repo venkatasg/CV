@@ -1,9 +1,9 @@
 \documentclass[11pt,a4paper]{mycv}
 \moderncvstyle{mb}
 \moderncvcolor{radish}
-\usepackage[hscale=0.70, vscale=0.82]{geometry}
+\usepackage[hscale=0.70, vscale=0.84]{geometry}
 
-\addbibresource{../bibliography.bib}
+\addbibresource{bibliography.bib}
 \nocite{*}
 
 % personal data
@@ -15,7 +15,7 @@
 
 \begin{document}
 
-\cfoot{\sansc page \thepage\ of \pageref{LastPage}}
+% \cfoot{\sansc page \thepage\ of \pageref{LastPage}}
 \makecvtitle
 
 \section{Education}
@@ -24,8 +24,10 @@
 \section{Work Experience}
 \input{../sections/work_experience.tex}
 
-\section{Research Experience}
-\input{../sections/research_experience.tex}
+\begingroup
+\setlength\bibitemsep{0.5ex}
+\printbibliography[title=Select papers, nottype=unpublished]
+\endgroup
 
 \section{Skills}
 \input{../sections/skills.tex}
@@ -33,19 +35,15 @@
 \section{Apps}
 \input{../sections/apps.tex}
 
-\begingroup
-\setlength\bibitemsep{0.5ex}
-\printbibliography[title=Papers, nottype=unpublished]
-\endgroup
 
-\begingroup
-\setlength\bibitemsep{0.5ex}
-\printbibliography[title=Talks, type=unpublished]
-\endgroup
-
-
-\section{Awards}
-\input{../sections/awards.tex}
+% \begingroup
+% \setlength\bibitemsep{0.5ex}
+% \printbibliography[title=Talks, type=unpublished]
+% \endgroup
+% 
+% 
+% \section{Awards}
+% \input{../sections/awards.tex}
 
 
 \end{document}
