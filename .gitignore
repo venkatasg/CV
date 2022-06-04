@@ -10,3 +10,4 @@
 *.aux
 .DS_Store
 *.log
+*.gz
