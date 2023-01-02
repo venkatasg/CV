@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{mycv}
 \moderncvstyle{mb}
 \moderncvcolor{radish}
-\usepackage[hscale=0.81, vscale=0.86]{geometry}
+\usepackage[hscale=0.7, vscale=0.75]{geometry}
 
 \addbibresource{bibliography.bib}
 \nocite{*}
@@ -13,11 +13,15 @@
 \social[github]{venkatasg}
 \social[linkedin]{gvenkatas}
 \phone{\href{tel:5125688775}{(512)568-8775}}
+\homepage{venkatasg.net}
 
 \begin{document}
 
-% \cfoot{\sansc page \thepage\ of \pageref{LastPage}}
+\cfoot{\sansc page \thepage\ of \pageref{LastPage}}
 \makecvtitle
+
+\section{Statement of Interest}
+\input{../sections/work_interests.tex}
 
 \section{Education}
 \input{../sections/education_abridged.tex}
@@ -29,14 +33,20 @@
 
 \begingroup
 \setlength\bibitemsep{0.5ex}
-\printbibliography[title=Select papers, nottype=unpublished]
+\printbibliography[title=Select publications, nottype=unpublished]
 \endgroup
 
 \section{Skills}
 \input{../sections/skills.tex}
 
-\section{Apps}
+\section{Relevant Graduate Coursework}
+\input{../sections/coursework.tex}
+
+\section{Personal Projects}
 \input{../sections/apps.tex}
+
+\section{Awards}
+\input{../sections/awards.tex}
 
 \section{Professional Service}
 \input{../sections/professional_service.tex}
