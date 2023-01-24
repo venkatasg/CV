@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper]{mycv}
 \moderncvstyle{mb}
 \moderncvcolor{radish}
-\usepackage[hscale=0.7, vscale=0.76]{geometry}
+\usepackage[hscale=0.7, vscale=0.72]{geometry}
 
 \addbibresource{bibliography.bib}
 \nocite{*}
@@ -30,13 +30,13 @@
 \input{sections/work_experience.tex}
 
 \begingroup
-\setlength\bibitemsep{0.5ex}
-\printbibliography[title=Papers, nottype=unpublished]
+\setlength\bibitemsep{1ex}
+\printbibliography[title=Publications, nottype=talk]
 \endgroup
 
 \begingroup
-\setlength\bibitemsep{0.5ex}
-\printbibliography[title=Talks, type=unpublished]
+\setlength\bibitemsep{1ex}
+\printbibliography[title=Talks, type=talk]
 \endgroup
 
 \section{Teaching Experience}
@@ -48,11 +48,11 @@
 \section{Personal Projects}
 \input{sections/apps.tex}
 
-\section{Professional Service}
-\input{sections/professional_service.tex}
-
 \section{Awards}
 \input{sections/awards.tex}
+
+\section{Professional Service}
+\input{sections/professional_service.tex}
 
 
 \end{document}
