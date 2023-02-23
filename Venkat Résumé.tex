@@ -1,10 +1,7 @@
-\documentclass[11pt,a4paper]{mycv}
-\moderncvstyle{mb}
-\moderncvcolor{radish}
-\usepackage[hscale=0.7, vscale=0.75]{geometry}
+\documentclass{practical-cv}
 
-\addbibresource{../bibliography.bib}
-\nocite{*}
+% Bibliography file
+\addbibresource{bibliography.bib}
 
 % personal data
 \name{Venkata\space S}{Govindarajan}
@@ -16,38 +13,32 @@
 
 \begin{document}
 
-\cfoot{\sansc page \thepage\ of \pageref{LastPage}}
 \makecvtitle
 
 \section{Personal Statement}
-\input{../sections/work_interests.tex}
+\input{sections/work_interests.tex}
 
 \section{Education}
-\input{../sections/education_abridged.tex}
-
-\vspace{0.5mm}
+\input{sections/education_abridged.tex}
 
 \section{Work Experience}
-\input{../sections/work_experience.tex}
+\input{sections/work_experience.tex}
 
-\begingroup
-\setlength\bibitemsep{1ex}
 \printbibliography[title=Select Publications, keyword=resume]
-\endgroup
 
 \section{Skills}
-\input{../sections/skills.tex}
+\input{sections/skills.tex}
 
 \section{Relevant Graduate Coursework}
-\input{../sections/coursework.tex}
+\input{sections/coursework.tex}
 
 \section{Personal Projects}
-\input{../sections/apps.tex}
+\input{sections/apps.tex}
 
 \section{Awards}
-\input{../sections/awards.tex}
+\input{sections/awards.tex}
 
 \section{Professional Service}
-\input{../sections/professional_service.tex}
+\input{sections/professional_service.tex}
 
 \end{document}

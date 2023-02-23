@@ -1,10 +1,7 @@
-\documentclass[11pt,a4paper]{mycv}
-\moderncvstyle{mb}
-\moderncvcolor{radish}
-\usepackage[hscale=0.7, vscale=0.76]{geometry}
+\documentclass{practical-cv}
 
+% bibliography file
 \addbibresource{bibliography.bib}
-\nocite{*}
 
 % personal data
 \name{Venkata\space S}{Govindarajan}
@@ -17,7 +14,6 @@
 
 \begin{document}
 
-\cfoot{\sansc page \thepage\ of \pageref{LastPage}}
 \makecvtitle
 
 \section{Research interests}
@@ -29,15 +25,9 @@
 \section{Work Experience}
 \input{sections/work_experience.tex}
 
-\begingroup
-\setlength\bibitemsep{1ex}
 \printbibliography[title=Publications, nottype=talk]
-\endgroup
 
-\begingroup
-\setlength\bibitemsep{1ex}
 \printbibliography[title=Talks, type=talk]
-\endgroup
 
 \section{Teaching Experience}
 \input{sections/teaching.tex}
@@ -53,6 +43,5 @@
 
 \section{Professional Service}
 \input{sections/professional_service.tex}
-
 
 \end{document}
