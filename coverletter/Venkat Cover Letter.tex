@@ -1,28 +1,33 @@
-\documentclass[myletter, a4paper, 11pt]{scrlttr2}
+\documentclass{practical-letter}
+
+\usepackage{lipsum}
+
+% Sender info
+\name{Venkata S Govindarajan}
+\signature{signature.png}
+\address{600 E 53rd Street,\\Austin TX 78751}
+\email{gvenkata1994@gmail.com}
+\phone{+1(512)568-8775)}
+
+% Addressee info
+\addressee{Addressee,\\Company/Institution}
+\subject{Subject of letter}
 
 \begin{document}
 
-\begin{letter}{
-    X\\
-    X's position\\
-    Company
-}
-
-\setkomavar{subject}{Application for Job}
-
 \opening{Dear X,}
 
-I am a Ph.D candidate in the Department of Linguistics at The University of Texas at Austin (graduating in Spring 2024), advised by Dr. Jessy Li and Dr. David Beaver. My research focuses on studying interpersonal biases in language use among online communities. Specifically I'm focusing on whether these biases manifest through subtle systematic variations in semantic and pragmatic attributes of words and sentences. Previously, I have studied how individuals perform pragmatic acts online (like giving advice), as well as the diversity of generalizations available across different predicate-argument structures, both of which inform my research work now.\\
+I am a Ph.D candidate in the Department of Linguistics at The University of Texas at Austin (graduating in Spring 2024), advised by Dr. Jessy Li and Dr. David Beaver. My research focuses on interpersonal biases in online communication, especially whether these biases manifest through subtle systematic variations in semantic and pragmatic attributes of words and sentences. Previously, I have studied how individuals perform pragmatic acts online (like giving advice), as well as the diversity of generalizations available across different predicate-argument structures, both of which inform my research work now.
 
-Why this company and job? What do I bring? What kind of stuff would I love to work on?\\
+\lipsum[1-1]
 
-Thank you for your time, and I look forward to talking with you about your views and goals for a job at Company.
+Thank you for your time, and I look forward to hearing back form you.
 
-\setkomavar{fromname}{Venkata S Govindarajan}
+
+
+
 \closing{Sincerely,}
 
 \encl{Résumé}
-
-\end{letter}
 
 \end{document}
