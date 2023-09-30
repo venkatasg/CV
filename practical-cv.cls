@@ -1,7 +1,7 @@
 %===============================================================================
 %================================= Definition ==================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{practical-cv}[2023/07/18 v1.0.0 my curriculum vitae and résumé class]
+\ProvidesClass{practical-cv}
 
 %===============================================================================
 %============================= page setup & options ============================
@@ -49,7 +49,7 @@
 
 % Page margins
 \RequirePackage{geometry}
-\geometry{top=1in, bottom=1.25in, left=1in, right=1in}
+\geometry{top=0.75in, bottom=1in, left=1in, right=1in}
 
 %===============================================================================
 %==================================== base =====================================
@@ -87,7 +87,7 @@
   \hypersetup{
     breaklinks,
     colorlinks    = true,
-    allcolors     = KaroBlue,
+    allcolors     = AmmaBlue,
     baseurl       = https://,
     pdfborder     = 0 0 0,
     pdfpagemode   = \pdfpagemode,
@@ -98,7 +98,7 @@
     pdfauthor     = {\@firstname{}~\@lastname{}},
     pdftitle      = {\@firstname{}~\@lastname{} -- CV},
     pdfsubject    = {CV of \@firstname{}~\@lastname{}},
-    pdfkeywords   = {\@firstname{}~\@lastname{}, curriculum vit\ae{}, r\'{e}sum\'{e}}}}
+    pdfkeywords   = {\@firstname{}~\@lastname{}, curriculum vit\ae{}}}}
 
 % headers and footers
 \RequirePackage{fancyhdr}
@@ -107,10 +107,10 @@
   \renewcommand{\footrulewidth}{0pt}
   \fancyhf{}}
 
-% page numbers in footer if more than 1 page
+% page numbers in footer
 \AtEndPreamble{%
   \AtBeginDocument{%
-        \ifthenelse{\pageref{LastPage}>1}{\cfoot{\sansc page \thepage\ of \pageref{LastPage}}}{}
+        \cfoot{\sansc page \thepage\ of \pageref{LastPage}}
       }
     }
 \pagestyle{plain}
@@ -201,7 +201,7 @@
 
 \RequirePackage{xcolor}
 \definecolor{MokaRed}{HTML}{D73A49} % my red
-\definecolor{KaroBlue}{HTML}{0366D6} % my blue
+\definecolor{AmmaBlue}{HTML}{0366D6} % my blue
 
 %===============================================================================
 %================================ new commands =================================
@@ -414,13 +414,12 @@
 %===============================================================================
 %=============================== bibliography ==================================
 
-\RequirePackage[style=practical,
-                backend=biber,
-                sorting=none,
-                maxbibnames=6,
-                minbibnames=4,
-                uniquename=false,
-                giveninits]{biblatex}
+\RequirePackage[backend=biber,
+                style=practical,
+                natbib=true,
+                maxcitenames=1,
+                maxbibnames=999,
+                sorting=none]{biblatex}
 
 % Set separation between bib entries
 \setlength\bibitemsep{1em}
