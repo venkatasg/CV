@@ -415,11 +415,24 @@
 %=============================== bibliography ==================================
 
 \RequirePackage[backend=biber,
-                style=practical,
+                style=authoryear,
                 natbib=true,
                 maxcitenames=1,
                 maxbibnames=999,
-                sorting=none]{biblatex}
+                sorting=none,
+                url=false,
+                doi=false]{biblatex}
+                
+\renewcommand*{\mkbibnamegiven}[1]{%
+                  \ifitemannotation{highlight}
+                    {\textbf{#1}}
+                    {#1}}
+                
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
 
 % Set separation between bib entries
 \setlength\bibitemsep{1em}
