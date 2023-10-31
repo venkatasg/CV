@@ -415,14 +415,16 @@
 %=============================== bibliography ==================================
 
 \RequirePackage[backend=biber,
-                style=authoryear,
+                citestyle=numeric,
+                bibstyle=authoryear,
                 natbib=true,
                 maxcitenames=1,
                 maxbibnames=999,
                 sorting=none,
+                defernumbers=true,
                 url=false,
                 doi=false]{biblatex}
-                
+
 \renewcommand*{\mkbibnamegiven}[1]{%
                   \ifitemannotation{highlight}
                     {\textbf{#1}}
@@ -440,4 +442,6 @@
 % Print all entries in bib file without explicit cite command
 \AtEndPreamble{
     \nocite{*}
+    \DeclareFieldFormat{labelnumber}{#1\adddot\addspace}
+    \AtEveryBibitem{\printfield{labelnumber}}
 }
