@@ -442,6 +442,7 @@
 % Print all entries in bib file without explicit cite command
 \AtEndPreamble{
     \nocite{*}
+    \DeclareNameAlias{author}{first-last}
     \DeclareFieldFormat{labelnumber}{#1\adddot\addspace}
     \AtEveryBibitem{\printfield{labelnumber}}
 }
