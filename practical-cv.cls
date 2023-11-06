@@ -421,7 +421,6 @@
                 maxcitenames=1,
                 maxbibnames=999,
                 sorting=none,
-                defernumbers=true,
                 url=false,
                 doi=false]{biblatex}
 
@@ -444,5 +443,6 @@
     \nocite{*}
     \DeclareNameAlias{author}{first-last}
     \DeclareFieldFormat{labelnumber}{#1\adddot\addspace}
+    \DeclareFieldInputHandler{extradate}{\def\NewValue{}} % Hides letter after date for duplicate month-year entries
     \AtEveryBibitem{\printfield{labelnumber}}
 }
