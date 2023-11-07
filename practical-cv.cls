@@ -421,6 +421,7 @@
                 maxcitenames=1,
                 maxbibnames=999,
                 sorting=none,
+                defernumbers=true,
                 url=false,
                 doi=false]{biblatex}
 
