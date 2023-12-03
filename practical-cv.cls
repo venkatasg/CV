@@ -145,18 +145,22 @@
 %================================= typography ==================================
 
 \RequirePackage{unicode-math}
-\setmainfont{Equity A}[Numbers={Lowercase,Proportional}, Contextuals=Alternate, SmallCapsFeatures={LetterSpace=3, Renderer=Basic}]
-\setsansfont{Concourse 3}[Numbers={Lowercase,Proportional}, Contextuals=Alternate, SmallCapsFeatures={LetterSpace=3, Renderer=Basic}]
 
-\newfontfamily{\sansc}{Concourse 3 Caps}[Letters=UppercaseSmallCaps, Numbers={Lowercase,Proportional}]
-\newfontfamily{\rmsc}{Equity A Caps}[Letters=UppercaseSmallCaps, Numbers={Lowercase,Proportional}]
-\newfontfamily{\sancs}{Concourse 3 Caps}[Letters=Uppercase, Numbers={Uppercase,Proportional}]
-\newfontfamily{\rmcs}{Equity A Caps}[Letters=Uppercase, Numbers={Uppercase,Proportional}]
+\setmainfont{Equity A}[
+    Numbers={Lowercase,Proportional}, 
+    Contextuals=Alternate,
+    WordSpace=1.08
+    ]
+\setsansfont{Concourse 3}[
+    Numbers={Lowercase,Proportional}, 
+    Contextuals=Alternate,
+    WordSpace=1.08
+    ]
 
-% IPA, monospace, and math fonts
-\newfontfamily{\ipa}{Charis SIL}
-\setmonofont[Scale=MatchLowercase]{Triplicate A Code}
-\setmathfont[Path=/Users/venkat/Library/Fonts/, Extension=.otf,Scale=MatchLowercase,Ligatures=TeX, BoldFont=XCharter-Math-Bold]{XCharter-Math}
+\newfontfamily{\sansc}{Concourse 3 Caps}[Letters=UppercaseSmallCaps, LetterSpace=5, WordSpace=1.08, Numbers={Lowercase,Proportional}]
+\newfontfamily{\rmsc}{Equity A Caps}[Letters=UppercaseSmallCaps, LetterSpace=5, WordSpace=1.08, Numbers={Lowercase,Proportional}]
+\newfontfamily{\sancs}{Concourse 3 Caps}[Letters=Uppercase, LetterSpace=5, WordSpace=1.08, Numbers={Uppercase,Proportional}]
+\newfontfamily{\rmcs}{Equity A Caps}[Letters=Uppercase, LetterSpace=5, WordSpace=1.08, Numbers={Uppercase,Proportional}]
 
 % Oldstyle tabular numbers inside tabular environment
 \AtBeginEnvironment{tabular}{\addfontfeatures{Numbers={Uppercase, Monospaced}}\small}
@@ -288,11 +292,11 @@
     \savebox{\makecvheaddetailsbox}{%
         \socialsfont%
         \begin{tabular}[b]{@{}r@{}}
-            \ifthenelse{\isundefined{\@phone}}{}{\makenewline{\small\faPhone*}~\href{tel:\@phone}{\@phone}}
-            \ifthenelse{\isundefined{\@email}}{}{\makenewline{\small\faEnvelope[regular]}~\href{mailto:\@email}{\@email}}
-            \ifthenelse{\isundefined{\@homepage}}{}{\makenewline{\small\faGlobe}~\href{https://\@homepage}{\@homepage}}
-            \ifthenelse{\isundefined{\@github}}{}{\makenewline{\small\faGithub}~\href{https://github.com/\@github}{\@github}}
-            \ifthenelse{\isundefined{\@linkedin}}{}{\makenewline{\small\faLinkedinIn}~\href{https://linkedin.com/in/\@linkedin}{\@linkedin}}
+            \ifthenelse{\isundefined{\@phone}}{}{\makenewline{\small\faPhone*}~\href{tel:\@phone}{\space\@phone}}
+            \ifthenelse{\isundefined{\@email}}{}{\makenewline{\small\faEnvelope[regular]}~\href{mailto:\@email}{\space\@email}}
+            \ifthenelse{\isundefined{\@homepage}}{}{\makenewline{\small\faGlobe}~\href{https://\@homepage}{\space\@homepage}}
+            \ifthenelse{\isundefined{\@github}}{}{\makenewline{\small\faGithub}~\href{https://github.com/\@github}{\space\@github}}
+            \ifthenelse{\isundefined{\@linkedin}}{}{\makenewline{\small\faLinkedinIn}~\href{https://linkedin.com/in/\@linkedin}{\space\@linkedin}}
         \end{tabular}
     }
 
