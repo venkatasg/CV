@@ -448,6 +448,7 @@
     \nocite{*}
     \DeclareNameAlias{author}{first-last}
     \DeclareFieldFormat{labelnumber}{#1\adddot\addspace}
+    \DeclareFieldFormat[misc]{title}{\mkbibquote{#1}}
     \DeclareFieldInputHandler{extradate}{\def\NewValue{}} % Hides letter after date for duplicate month-year entries
     \AtEveryBibitem{\printfield{labelnumber}}
 }
