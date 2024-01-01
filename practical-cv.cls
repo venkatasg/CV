@@ -10,35 +10,15 @@
 \DeclareOption{a4paper}{
   \setlength\paperheight{297mm}
   \setlength\paperwidth{210mm}}
-\DeclareOption{a5paper}{
-  \setlength\paperheight{210mm}
-  \setlength\paperwidth{148mm}}
-\DeclareOption{b5paper}{
-  \setlength\paperheight{250mm}
-  \setlength\paperwidth{176mm}}
 \DeclareOption{letterpaper}{
   \setlength\paperheight{11in}
   \setlength\paperwidth{8.5in}}
-\DeclareOption{legalpaper}{
-  \setlength\paperheight{14in}
-  \setlength\paperwidth{8.5in}}
-\DeclareOption{executivepaper}{
-  \setlength\paperheight{10.5in}
-  \setlength\paperwidth{7.25in}}
-\DeclareOption{landscape}{
-  \setlength\@tempdima{\paperheight}
-  \setlength\paperheight{\paperwidth}
-  \setlength\paperwidth{\@tempdima}}
 
 % font size options
 \newcommand\@ptsize{}
 \DeclareOption{10pt}{\renewcommand\@ptsize{0}}
 \DeclareOption{11pt}{\renewcommand\@ptsize{1}}
 \DeclareOption{12pt}{\renewcommand\@ptsize{2}}
-
-% draft/final option
-\DeclareOption{draft}{\setlength\overfullrule{5pt}}
-\DeclareOption{final}{\setlength\overfullrule{0pt}}
 
 % execute default options
 \ExecuteOptions{a4paper,11pt,final}
@@ -49,7 +29,7 @@
 
 % Page margins
 \RequirePackage{geometry}
-\geometry{top=1in, bottom=1.25in, left=1in, right=1in}
+\geometry{top=1in, bottom=1.25in, left=1.25in, right=1.25in}
 
 %===============================================================================
 %==================================== base =====================================
@@ -110,7 +90,7 @@
 % page numbers in footer
 \AtEndPreamble{%
   \AtBeginDocument{%
-        \cfoot{\sansc page \thepage\ of \pageref{LastPage}}
+        \cfoot{\sansclight page \thepage\ of \pageref{LastPage}}
       }
     }
 \pagestyle{plain}
@@ -146,21 +126,21 @@
 
 \RequirePackage{unicode-math}
 
-\setmainfont{Equity A}[
+\setmainfont[
     Numbers={Lowercase,Proportional}, 
     Contextuals=Alternate,
     WordSpace=1.08
-    ]
-\setsansfont{Concourse 3}[
+    ]{Equity A}
+    
+\setsansfont[
     Numbers={Lowercase,Proportional}, 
     Contextuals=Alternate,
     WordSpace=1.08
-    ]
+    ]{Concourse 3}
 
-\newfontfamily{\sansc}{Concourse 3 Caps}[Letters=UppercaseSmallCaps, LetterSpace=5, WordSpace=1.08, Numbers={Lowercase,Proportional}]
+\newfontfamily{\sansc}{Concourse 4 Caps}[Letters=UppercaseSmallCaps, LetterSpace=5, WordSpace=1.08, Numbers={Lowercase,Proportional}]
+\newfontfamily{\sansclight}{Concourse 3 Caps}[Letters=UppercaseSmallCaps, LetterSpace=5, WordSpace=1.08, Numbers={Lowercase,Proportional}]
 \newfontfamily{\rmsc}{Equity A Caps}[Letters=UppercaseSmallCaps, LetterSpace=5, WordSpace=1.08, Numbers={Lowercase,Proportional}]
-\newfontfamily{\sancs}{Concourse 3 Caps}[Letters=Uppercase, LetterSpace=5, WordSpace=1.08, Numbers={Uppercase,Proportional}]
-\newfontfamily{\rmcs}{Equity A Caps}[Letters=Uppercase, LetterSpace=5, WordSpace=1.08, Numbers={Uppercase,Proportional}]
 
 % Oldstyle tabular numbers inside tabular environment
 \AtBeginEnvironment{tabular}{\addfontfeatures{Numbers={Uppercase, Monospaced}}\small}
@@ -172,33 +152,20 @@
 %===============================================================================
 %============================== personal details ===============================
 
-% defines one's name
-% usage: \name{<firstname>}{<lastname>}
+% name
 \newcommand*{\name}[2]{\def\@firstname{#1}\def\@lastname{#2}}
 
-% defines one's title (optional)
-% usage: \title{<title>}
+% address/title
 \renewcommand*{\title}[1]{\def\@title{#1}}
 
-% defines one's email (optional)
-% usage: \email{<email adress>}
+% email
 \newcommand*{\email}[1]{\def\@email{#1}}
 
-% defines one's home page (optional)
-% usage: \homepage{<url>}
+% homepage
 \newcommand*{\homepage}[1]{\def\@homepage{#1}}
 
-% add phone number
-% usage: \phone{<phone number>}
-\newcommand*{\phone}[1]{\def\@phone{#1}}
-
-% add phone number
-% usage: \phone{<phone number>}
-\newcommand*{\github}[1]{\def\@github{#1}}
-
-% add phone number
-% usage: \phone{<phone number>}
-\newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
+% pronouns
+\newcommand*{\pronouns}[1]{\def\@pronouns{#1}}
 
 %===============================================================================
 %=================================== colors ====================================
@@ -272,7 +239,7 @@
 
 % fonts
 \renewcommand*{\namefont}{\Huge\sffamily}
-\renewcommand*{\titlefont}{\large\sansc}
+\renewcommand*{\titlefont}{\sansclight}
 \renewcommand*{\socialsfont}{\small\sffamily}
 
 % styles
@@ -292,11 +259,10 @@
     \savebox{\makecvheaddetailsbox}{%
         \socialsfont%
         \begin{tabular}[b]{@{}r@{}}
-            \ifthenelse{\isundefined{\@phone}}{}{\makenewline{\small\faPhone*}~\href{tel:\@phone}{\space\@phone}}
-            \ifthenelse{\isundefined{\@email}}{}{\makenewline{\small\faEnvelope[regular]}~\href{mailto:\@email}{\space\@email}}
+            \ifthenelse{\isundefined{\@pronouns}}{}{\makenewline{\small\faUser[regular]}\space\@pronouns}
             \ifthenelse{\isundefined{\@homepage}}{}{\makenewline{\small\faGlobe}~\href{https://\@homepage}{\space\@homepage}}
-            \ifthenelse{\isundefined{\@github}}{}{\makenewline{\small\faGithub}~\href{https://github.com/\@github}{\space\@github}}
-            \ifthenelse{\isundefined{\@linkedin}}{}{\makenewline{\small\faLinkedinIn}~\href{https://linkedin.com/in/\@linkedin}{\space\@linkedin}}
+            \ifthenelse{\isundefined{\@email}}{}{\makenewline{\small\faEnvelope[regular]}~\href{mailto:\@email}{\space\@email}}
+            
         \end{tabular}
     }
 
@@ -329,11 +295,11 @@
 
 % fonts
 \renewcommand*{\sectionfont}{%
-  \large\bfseries\sansc
+  \sansc
 }
 
 \renewcommand*{\subsectionfont}{%
-  \large\itshape
+  \itshape
 }
 
 % styles
@@ -373,7 +339,7 @@
   \par\addvspace{0.5\baselineskip}
   \phantomsection{}
   \subsectionstyle{#2}
-  \par\nobreak\addvspace{0.25\baselineskip}\@afterheading
+  \par\nobreak\@afterheading
 }
 
 % Line before section title
@@ -392,18 +358,21 @@
 
 \renewcommand*{\cventry}[6][1em]{
     \addvspace{#1}
-    \ifthenelse{\equal{#6}{}}{
-        \begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}
-            {#3} & {#4}\\[0.2em]
-            {#2} & {\footnotesize #5}\\
-        \end{tabular*}
-    }
     {
-        \begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}
-            {#3} & {#4}\\[0.2em]
-            {#2} & {\footnotesize #5}\\[0.2em]
-            \multicolumn{2}{p{\textwidth}}{#6}\\
-        \end{tabular*}
+        \renewcommand{\arraystretch}{1.12}
+        \ifthenelse{\equal{#6}{}}{
+            \begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}
+                {\large #3} & {\large #4}\\
+                {\itshape #2} & {\small\rmsc #5}\\
+            \end{tabular*}
+        }
+        {
+            \begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}
+                {\large #3} & {\large #4}\\
+                {\itshape #2} & {\small\rmsc #5}\\
+                \multicolumn{2}{p{\textwidth}}{#6}\\
+            \end{tabular*}
+        }
     }
 }
 
@@ -422,7 +391,6 @@
                 citestyle=numeric,
                 bibstyle=authoryear,
                 natbib=true,
-                maxcitenames=1,
                 maxbibnames=999,
                 sorting=none,
                 defernumbers=true,
