@@ -164,7 +164,7 @@
 \newcommand*{\homepage}[1]{\def\@homepage{#1}}
 
 % pronouns
-\newcommand*{\pronouns}[1]{\def\@pronouns{#1}}
+\newcommand*{\scholar}[1]{\def\@scholar{#1}}
 
 %===============================================================================
 %=================================== colors ====================================
@@ -258,7 +258,7 @@
     \savebox{\makecvheaddetailsbox}{%
         \socialsfont%
         \begin{tabular}[b]{@{}r@{}}
-            \ifthenelse{\isundefined{\@pronouns}}{}{\makenewline{\small\faUser[regular]}\space\@pronouns}
+            \ifthenelse{\isundefined{\@scholar}}{}{\makenewline{\small\faGraduationCap}~\href{https://scholar.google.com/citations?hl=en\&user=9kBPfigAAAAJ}{\space\@scholar}}
             \ifthenelse{\isundefined{\@homepage}}{}{\makenewline{\small\faGlobe}~\href{https://\@homepage}{\space\@homepage}}
             \ifthenelse{\isundefined{\@email}}{}{\makenewline{\small\faEnvelope[regular]}~\href{mailto:\@email}{\space\@email}}
             
