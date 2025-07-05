@@ -163,8 +163,11 @@
 % homepage
 \newcommand*{\homepage}[1]{\def\@homepage{#1}}
 
-% pronouns
+% Google Scholar
 \newcommand*{\scholar}[1]{\def\@scholar{#1}}
+
+% LinkedIn
+\newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
 
 %===============================================================================
 %=================================== colors ====================================
@@ -258,9 +261,10 @@
     \savebox{\makecvheaddetailsbox}{%
         \socialsfont%
         \begin{tabular}[b]{@{}r@{}}
-            \ifthenelse{\isundefined{\@scholar}}{}{\makenewline{\small\faGraduationCap}~\href{https://scholar.google.com/citations?hl=en\&user=9kBPfigAAAAJ}{\space\@scholar}}
             \ifthenelse{\isundefined{\@homepage}}{}{\makenewline{\small\faGlobe}~\href{https://\@homepage}{\space\@homepage}}
             \ifthenelse{\isundefined{\@email}}{}{\makenewline{\small\faEnvelope[regular]}~\href{mailto:\@email}{\space\@email}}
+            \ifthenelse{\isundefined{\@scholar}}{}{\makenewline{\small\faGraduationCap}~\href{https://scholar.google.com/citations?hl=en\&user=9kBPfigAAAAJ}{\space\@scholar}}
+            \ifthenelse{\isundefined{\@linkedin}}{}{\makenewline{\small\faLinkedinIn}~\href{https://www.linkedin.com/in/gvenkatas/}{\space\@linkedin}}
             
         \end{tabular}
     }
@@ -361,13 +365,13 @@
         \renewcommand{\arraystretch}{1.12}
         \ifthenelse{\equal{#6}{}}{
             \begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}
-                {\large #3} & {\large #4}\\
+                {\large #3} & {\normalsize #4}\\
                 {\itshape #2} & {\small\rmsc #5}\\
             \end{tabular*}
         }
         {
             \begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}
-                {\large #3} & {\large #4}\\
+                {\large #3} & {\normalsize #4}\\
                 {\itshape #2} & {\small\rmsc #5}\\
                 \multicolumn{2}{p{\textwidth}}{#6}\\
             \end{tabular*}
