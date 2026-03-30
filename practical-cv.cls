@@ -127,13 +127,13 @@
 \RequirePackage{unicode-math}
 
 \setmainfont[
-    Numbers={Lowercase,Proportional}, 
+    Numbers={Lowercase,Proportional},
     Contextuals=Alternate,
     WordSpace=1.08
     ]{Equity A}
-    
+
 \setsansfont[
-    Numbers={Lowercase,Proportional}, 
+    Numbers={Lowercase,Proportional},
     Contextuals=Alternate,
     WordSpace=1.08
     ]{Concourse 3}
@@ -265,7 +265,7 @@
             \ifthenelse{\isundefined{\@email}}{}{\makenewline{\small\faEnvelope[regular]}~\href{mailto:\@email}{\space\@email}}
             \ifthenelse{\isundefined{\@scholar}}{}{\makenewline{\small\faGraduationCap}~\href{https://scholar.google.com/citations?hl=en\&user=9kBPfigAAAAJ}{\space\@scholar}}
             \ifthenelse{\isundefined{\@linkedin}}{}{\makenewline{\small\faLinkedinIn}~\href{https://www.linkedin.com/in/gvenkatas/}{\space\@linkedin}}
-            
+
         \end{tabular}
     }
 
@@ -404,7 +404,7 @@
                   \ifitemannotation{highlight}
                     {\textbf{#1}}
                     {#1}}
-                
+
 \renewcommand*{\mkbibnamefamily}[1]{%
   \ifitemannotation{highlight}
     {\textbf{#1}}
