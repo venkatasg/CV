@@ -90,7 +90,10 @@
 % page numbers in footer
 \AtEndPreamble{%
   \AtBeginDocument{%
-        \cfoot{\sansc page \thepage\ of \pageref{LastPage}}
+        % LastPage is written to the .aux by the lastpage package, so it has no
+        % \label in the sources; \csname hides the \pageref from language
+        % servers (texlab) that would otherwise flag an undefined reference
+        \cfoot{\sansc page \thepage\ of \csname pageref\endcsname{LastPage}}
       }
     }
 \pagestyle{plain}
@@ -417,9 +420,10 @@
 % Print all entries in bib file without explicit cite command
 \AtEndPreamble{
     \nocite{*}
-    \DeclareNameAlias{author}{first-last}
+    \DeclareNameAlias{author}{given-family}
     \DeclareFieldFormat{labelnumber}{#1\adddot\addspace}
     \DeclareFieldFormat[misc]{title}{\mkbibquote{#1}}
     \DeclareFieldInputHandler{extradate}{\def\NewValue{}} % Hides letter after date for duplicate month-year entries
     \AtEveryBibitem{\printfield{labelnumber}}
+    \AtEveryBibitem{\clearname{editor}}
 }
